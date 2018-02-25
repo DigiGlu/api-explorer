@@ -24,6 +24,7 @@
     "d3-scale": "^1.0.6",
     "d3-shape": "^1.2.0",
     "dagre": "github:darosh/dagre",
+    "discontinuous-range": "^1.0.0",
     "fast-json-patch": "^2.0.6",
     "highlight.js": "^9.12.0",
     "intersection-observer": "^0.4.3",
