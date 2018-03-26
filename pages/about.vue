@@ -5,7 +5,9 @@
       v-flex(style="max-width: 80em")
         v-card.pa-4.mb-1
           .pt-3.hidden-xs-only
-          h3.pb-3.ma-0.display-2 OpenAPI Specification Explorer
+          img.dg-logo(src="@/assets/logo-nav.png")
+          h3.pb-3.ma-0.display-2 API Explorer
+          h4.pb-3 (based on OAX - https://github.com/darosh/oax.git)
           .pb-3.hidden-xs-only
           v-divider
           v-layout.mt-3.mb-3
@@ -175,4 +177,9 @@
 
 <style scoped lang="stylus">
   @import "../assets/style/app/table-stripes.styl"
+
+  .dg-logo
+    margin-bottom 30px
+    height 40px
+    width auto
 </style>
