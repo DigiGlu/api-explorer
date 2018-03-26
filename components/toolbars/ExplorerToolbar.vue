@@ -1,12 +1,14 @@
 <template lang="pug">
   v-layout.ma-0.toolbar__content(row style="height: 100%")
+    img(class="dg-nav-logo" src="@/assets/logo-nav.png")
+    v-toolbar-title API Explorer
     //v-btn(v-if="components.edit && !UI_LEFT_DRAWER" icon, @click.stop="UI_SET_LEFT_DRAWER()", :class="searching ? 'hidden-xs-only' : ''")
     v-btn(aria-label="Edit specification" v-if="!UI_LEFT_DRAWER" icon, @click.stop="UI_SET_LEFT_DRAWER()", :class="searching ? 'hidden-xs-only' : ''")
       v-icon edit
     v-menu.menu--api(bottom right :class="searching ? 'hidden-sm-and-down' : ''" style="height: 100%; display: flex")
       v-toolbar-items(slot="activator" style="height: 100%")
         v-btn(flat style="height: 100%; min-width: 0")
-          v-toolbar-title(style="margin-left: 0") API
+          v-toolbar-title(style="margin-left: 0") VIEW
             span.secondary--text(v-if="VIEW_VIEW" style="text-transform: none")
               |  &ndash; {{{1:'Operations', 2: 'Table', 3: 'Schemas', 5: 'Paths'}[VIEW_VIEW]}}
           v-icon arrow_drop_down
@@ -169,6 +171,11 @@
     text-transform uppercase
 
   @import '../../node_modules/vuetify/src/stylus/settings/_variables.styl'
+
+  .dg-nav-logo
+    margin-top 5px
+    height 40px
+    width auto
 
   .searching
     overflow hidden
