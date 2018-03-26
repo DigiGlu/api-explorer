@@ -1,10 +1,10 @@
 <template lang="pug">
   v-layout.ma-0.toolbar__content(row style="height: 100%")
-    img(class="dg-nav-logo" src="@/assets/logo-nav.png")
-    v-toolbar-title API Explorer
-    //v-btn(v-if="components.edit && !UI_LEFT_DRAWER" icon, @click.stop="UI_SET_LEFT_DRAWER()", :class="searching ? 'hidden-xs-only' : ''")
     v-btn(aria-label="Edit specification" v-if="!UI_LEFT_DRAWER" icon, @click.stop="UI_SET_LEFT_DRAWER()", :class="searching ? 'hidden-xs-only' : ''")
-      v-icon edit
+      v-icon folder_open
+    img(class="dg-nav-logo" src="@/assets/logo-nav.png")
+    //v-btn(v-if="components.edit && !UI_LEFT_DRAWER" icon, @click.stop="UI_SET_LEFT_DRAWER()", :class="searching ? 'hidden-xs-only' : ''")
+    v-toolbar-title.mx-5 API Explorer
     v-menu.menu--api(bottom right :class="searching ? 'hidden-sm-and-down' : ''" style="height: 100%; display: flex")
       v-toolbar-items(slot="activator" style="height: 100%")
         v-btn(flat style="height: 100%; min-width: 0")
@@ -74,10 +74,10 @@
           span Switch view
         app-toolbar-menu(view)
 
-    v-tooltip(bottom)
-      v-btn.hidden-xs-only(aria-label="Authorization" slot="activator" v-if="SPEC && SPEC.securityDefinitions && Object.keys(SPEC.securityDefinitions).length" icon @click.native.stop="UI_SET_DIALOG('security')")
+    //v-tooltip(bottom)
+      //v-btn.hidden-xs-only(aria-label="Authorization" slot="activator" v-if="SPEC && SPEC.securityDefinitions && Object.keys(SPEC.securityDefinitions).length" icon @click.native.stop="UI_SET_DIALOG('security')")
         v-icon lock
-      span Authorization
+      //span Authorization
 
     v-menu(v-if="$vuetify.breakpoint.xsOnly || (components.pageStatuses || components.pageHeaders || components.pageMethods || components.github || components.pageAbout || components.pageStats)", :class="searching ? 'hidden-xs-only' : ''" bottom left)
       v-btn(aria-label="Menu" icon slot="activator")
@@ -173,7 +173,7 @@
   @import '../../node_modules/vuetify/src/stylus/settings/_variables.styl'
 
   .dg-nav-logo
-    margin-top 5px
+    margin-top 0px
     height 40px
     width auto
 
