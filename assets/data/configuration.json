@@ -8,6 +8,6 @@
   "allowEditProxy": true,
   "allowDownload": false,
   "updated": false,
-  "limitSpecButtonText": 8, 
-  "directory": ["openAPIDirectory", "openAPIDirectoryLite", "swaggerHubRegistry", "apisIoOpenAPIs", "openAPISamples", "hapi", "tmf"]
+  "limitSpecButtonText": 8,
+  "directory": ["openAPIDirectory", "tmf", "openAPIDirectoryLite", "swaggerHubRegistry", "apisIoOpenAPIs", "openAPISamples", "hapi"]
 }
