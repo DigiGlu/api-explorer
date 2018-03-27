@@ -2,7 +2,7 @@ export default {
   title: 'TM Forum OpenAPIs',
   subTitle: 'Open APIs published by the TM Forum',
   home: 'https://github.com/tmforum-apis',
-  base: 'https://raw.githubusercontent.com/DigiGlu/tmf-api-directory/master/open-api-directory',
+  base: 'https://raw.githubusercontent.com/DigiGlu/tmf-api-directory/master/open-api-directory.json',
   transform (data) {
     const apis = data
     return {apis}
