@@ -1,7 +1,7 @@
 <template lang="pug">
   v-layout.ma-0.toolbar__content(row style="height: 100%")
     v-btn(aria-label="Edit specification" v-if="!UI_LEFT_DRAWER" icon, @click.stop="UI_SET_LEFT_DRAWER()", :class="searching ? 'hidden-xs-only' : ''")
-      v-icon folder_open
+      v-icon web_asset
     img(class="dg-nav-logo" src="@/assets/logo-nav.png")
     //v-btn(v-if="components.edit && !UI_LEFT_DRAWER" icon, @click.stop="UI_SET_LEFT_DRAWER()", :class="searching ? 'hidden-xs-only' : ''")
     v-toolbar-title.mx-5 API Explorer
@@ -67,12 +67,12 @@
           v-icon(v-if="SPEC_TAG_OPENED") keyboard_arrow_up
           v-icon(v-else) keyboard_arrow_down
         span Expand/Collapse
-      v-menu.hidden-xs-only(bottom left)
-        v-tooltip(bottom slot="activator")
-          v-btn(aria-label="Switch view" icon slot="activator")
-            v-icon visibility
-          span Switch view
-        app-toolbar-menu(view)
+      //v-menu.hidden-xs-only(bottom left)
+      //  v-tooltip(bottom slot="activator")
+      //    v-btn(aria-label="Switch view" icon slot="activator")
+      //      v-icon visibility
+      //    span Switch view
+      //  app-toolbar-menu(view)
 
     //v-tooltip(bottom)
       //v-btn.hidden-xs-only(aria-label="Authorization" slot="activator" v-if="SPEC && SPEC.securityDefinitions && Object.keys(SPEC.securityDefinitions).length" icon @click.native.stop="UI_SET_DIALOG('security')")
