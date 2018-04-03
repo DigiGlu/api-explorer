@@ -1,19 +1,18 @@
 <template lang="pug">
   div
     v-divider
-    v-layout(style="z-index: 9").pt-3.pb-3.pl-3.pr-3.ma-0.elevation-2.relative
+    v-menu(bottom left)
+      v-btn.ml-1.mr-0.ym-5(aria-label="Select directory" flat slot="activator")
+        h3.headline.mb-0(style="color: #CD0000;") {{directory[configuration.directory[collection-1]].title}}
+        v-icon arrow_drop_down
+      v-list(subheader two-line)
+        v-subheader API Collection
+        v-list-tile(@click="collection = k + 1" ripple avatar v-for="(d, k) in configuration.directory", :key="k")
+          v-list-tile-content
+            v-list-tile-title {{directory[d].title}}
+            v-list-tile-sub-title {{directory[d].subTitle}}
+    v-layout(style="z-index: 9").pt-3.pb-3.pl-3.pr-3.ma-0.ym-0.elevation-2.relative
       v-text-field.mr-2(spellcheck="false" solo label="Search" v-model="filter" hide-details single-line prepend-icon="search", :append-icon="filter ? 'close' : null", :append-icon-cb="() => filter = null" v-focus.wait="UI_LEFT_DRAWER && value")
-      v-menu(bottom left)
-        v-btn.ml-1.mr-0(aria-label="Select directory" slot="activator" icon)
-          v-icon {{'numeric_' + collection + '_box'}}
-        v-list(subheader two-line)
-          v-subheader API Collection
-          v-list-tile(@click="collection = k + 1" ripple avatar v-for="(d, k) in configuration.directory", :key="k")
-            v-list-tile-avatar(:tile="collection === (k+1)")
-              .icon.white--text(:class="collection !== (k+1) ? 'secondary' : 'primary'") {{k+1}}
-            v-list-tile-content
-              v-list-tile-title {{directory[d].title}}
-              v-list-tile-sub-title {{directory[d].subTitle}}
       v-tooltip(left)
         v-btn.ml-1.mr-0(aria-label="Search in specifications" slot="activator" v-if="APIS_COLLECTION_OBJECT.fullText" icon @click="fullText = !fullText")
           v-icon(:primary="fullText") file_find
