@@ -3,7 +3,7 @@
     v-toolbar.elevation-0(style="background-color: transparent")
       v-btn(aria-label="Close specification edit" icon @click.stop="UI_SET_LEFT_DRAWER(false)")
         v-icon close
-      v-toolbar-title Specification
+      v-toolbar-title Catalog
       v-spacer(v-if="$half < $vuetify.breakpoint.width")
       v-btn.mr-3(aria-label="Wide specification edit" v-if="$half < $vuetify.breakpoint.width" icon @click="UI_SET_LEFT_DRAWER_HALF(!UI_LEFT_DRAWER_HALF)")
         v-icon {{UI_LEFT_DRAWER_HALF ? 'arrow_collapse_left' : 'arrow_collapse_right'}}

@@ -1,16 +1,14 @@
 <template lang="pug">
   v-layout.ma-0.toolbar__content(row style="height: 100%")
-    v-btn(aria-label="Edit specification" v-if="!UI_LEFT_DRAWER" icon, @click.stop="UI_SET_LEFT_DRAWER()", :class="searching ? 'hidden-xs-only' : ''")
-      v-icon folder_open
     img(class="dg-nav-logo" src="@/assets/logo-nav.png")
     //v-btn(v-if="components.edit && !UI_LEFT_DRAWER" icon, @click.stop="UI_SET_LEFT_DRAWER()", :class="searching ? 'hidden-xs-only' : ''")
     v-toolbar-title.mx-5 API Explorer
     v-menu.menu--api(bottom right :class="searching ? 'hidden-sm-and-down' : ''" style="height: 100%; display: flex")
       v-toolbar-items(slot="activator" style="height: 100%")
-        v-btn(flat style="height: 100%; min-width: 0")
-          v-toolbar-title(style="margin-left: 0") VIEW
-            span.secondary--text(v-if="VIEW_VIEW" style="text-transform: none")
-              |  &ndash; {{{1:'Operations', 2: 'Table', 3: 'Schemas', 5: 'Paths'}[VIEW_VIEW]}}
+        v-btn(v-if="!UI_LEFT_DRAWER", flat style="height: 100%; min-width: 0; margin-right: 10px; padding-right: 5px;", @click.stop="UI_SET_LEFT_DRAWER()") Catalog
+        v-btn(flat style="height: 100%; min-width: 0") VIEW
+          //span.secondary--text(v-if="VIEW_VIEW" style="text-transform: none")
+            | &ndash; {{{1:'Operations', 2: 'Table', 3: 'Schemas', 5: 'Paths'}[VIEW_VIEW]}}
           v-icon arrow_drop_down
       v-list(subheader)
         v-subheader API View
@@ -67,12 +65,12 @@
           v-icon(v-if="SPEC_TAG_OPENED") keyboard_arrow_up
           v-icon(v-else) keyboard_arrow_down
         span Expand/Collapse
-      v-menu.hidden-xs-only(bottom left)
-        v-tooltip(bottom slot="activator")
-          v-btn(aria-label="Switch view" icon slot="activator")
-            v-icon visibility
-          span Switch view
-        app-toolbar-menu(view)
+      //v-menu.hidden-xs-only(bottom left)
+      //  v-tooltip(bottom slot="activator")
+      //    v-btn(aria-label="Switch view" icon slot="activator")
+      //      v-icon visibility
+      //    span Switch view
+      //  app-toolbar-menu(view)
 
     //v-tooltip(bottom)
       //v-btn.hidden-xs-only(aria-label="Authorization" slot="activator" v-if="SPEC && SPEC.securityDefinitions && Object.keys(SPEC.securityDefinitions).length" icon @click.native.stop="UI_SET_DIALOG('security')")
