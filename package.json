@@ -16,7 +16,7 @@
     "@types/showdown": "^1.7.2",
     "@types/swagger-schema-official": "^2.0.7",
     "axios": "^0.17.1",
-    "ciena-graphlib": "^1.0.8",
+    "ciena-graphlib": "file:../ciena-graphlib",
     "circular-json": "^0.4.0",
     "codemirror": "^5.31.0",
     "d3-array": "^1.2.1",
