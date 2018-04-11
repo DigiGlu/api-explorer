@@ -14,6 +14,7 @@
     components: {
       appToolbarMenu: () => import('./ToolbarMenu'),
       appAboutToolbar: () => import('./AboutToolbar'),
+      appValidatorToolbar: () => import('./ValidatorToolbar'),
       appExplorerToolbar: () => import('./ExplorerToolbar')
     },
     data: function () {

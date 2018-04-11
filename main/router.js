@@ -18,11 +18,21 @@ const routes = [
     name: 'about',
     path: '/about',
     components: {
-      default: () => import('../pages/about'),
-      toolbar: () => import('../components/toolbars/AboutToolbar'),
-      panel: () => import('../components/panels/left/AboutPanel')
+      default: () => import('../pages/validator'),
+      toolbar: () => import('../components/toolbars/ValidatorToolbar'),
+      panel: () => import('../components/panels/left/ValidatorPanel')
     },
     meta: {name: 'About', panel: true, panelWidth: 280}
+  },
+  {
+    name: 'validator',
+    path: '/validator',
+    components: {
+      default: () => import('../pages/validator'),
+      toolbar: () => import('../components/toolbars/ValidatorToolbar'),
+      panel: () => import('../components/panels/left/ValidatorPanel')
+    },
+    meta: {name: 'Validator', panel: true, panelWidth: 280}
   }
 ]
 
