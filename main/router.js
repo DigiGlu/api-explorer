@@ -18,9 +18,9 @@ const routes = [
     name: 'about',
     path: '/about',
     components: {
-      default: () => import('../pages/validator'),
-      toolbar: () => import('../components/toolbars/ValidatorToolbar'),
-      panel: () => import('../components/panels/left/ValidatorPanel')
+      default: () => import('../pages/about'),
+      toolbar: () => import('../components/toolbars/AboutToolbar'),
+      panel: () => import('../components/panels/left/AboutPanel')
     },
     meta: {name: 'About', panel: true, panelWidth: 280}
   },

@@ -1,8 +1,9 @@
 <template lang="pug">
   // TODO v-toolbar(fixed scroll-off-screen scroll-target="main")
   v-toolbar.gpu(fixed app v-if="APP_ROUTED")
+    app-validator-toolbar(v-if="$route.name === 'validator'")
     app-explorer-toolbar(v-if="$route.name === 'index'")
-    app-about-toolbar(v-else)
+    app-about-toolbar(v-if="$route.name != 'index' && $route.name != 'validator'")
 </template>
 
 <script>
