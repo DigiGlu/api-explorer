@@ -6,7 +6,9 @@
         v-card.pa-4.mb-1
           .pt-3.hidden-xs-only
           img.dg-logo(src="@/assets/tmf-logo-2018.svg")
-          h3.pb-3.ma-0.display-2 TMF API Specification Validator
+          h3.pb-3.ma-0.display-2 Open API Specification Validator
+          p.my-5 THIS IS WHERE THE REPORTS APPEARS!
+          v-btn Download PDF
       v-spacer.hidden-xs-only
 </template>
 
