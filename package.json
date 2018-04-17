@@ -39,6 +39,7 @@
     "randexp": "^0.4.6",
     "random-material-color": "^1.0.3",
     "serialize-error": "^2.1.0",
+    "should": "^13.2.1",
     "showdown": "^1.8.2",
     "swagger-schema-official": "^2.0.0-bab6bed",
     "v-hotkey": "^0.2.0",

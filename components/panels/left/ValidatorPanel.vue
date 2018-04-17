@@ -17,9 +17,9 @@
     data () {
       return {
         keys: [
-          ['suite1', 'Test suite 1'],
-          ['suite2', 'Test suite 2'],
-          ['suite3', 'Test suite 3']
+          ['suite1', 'Design Guidelines v3.0'],
+          ['suite2', 'Design Guidelines v2.5'],
+          ['suite3', 'Design Guidelines v2.0']
         ]
       }
     },
