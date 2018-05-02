@@ -165,6 +165,6 @@
     "webpack:build": "node build",
     "webpack:deploy": "npm --no-git-tag-version version patch && npm run data:dependencies && npm run webpack:build && deploy-to-gh-pages --local ./dist",
     "webpack:dev": "node build/dev-server.js",
-    "webpack:report": "npm run webpack:build --report"
-  }
+    "webpack:report": "npm run webpack:build --report",
+    "build-lib": "rimraf ./dist && webpack --config ./build/webpack.lib.conf.js"  }
 }
