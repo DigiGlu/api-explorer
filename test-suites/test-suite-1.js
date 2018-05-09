@@ -1,5 +1,7 @@
 import should from 'should/as-function'
 
+import helpers from './helpers/swaggerspec'
+
 var testSuite = { "tests":
   [
     {
@@ -21,10 +23,9 @@ var testSuite = { "tests":
     {
       "name": "If the 'basePath' has a major version in the URI, it must match the major version from 'info.version'",
       "test": function(spec) {
-        var basePathVersion = spec.basePath.match(/.*\/v(\d)(\/)?/);
-        if (basePathVersion[1]) {
-          console.log("BPV", basePathVersion[1])
-          return should(spec.info.version).startWith(basePathVersion[1]);
+        if (basePathVersion(spec)) {
+          console.log("BPV", basePathVersion(spec))
+          return should(spec.info.version).startWith(basePathVersion(spec));
         } else {
           return should(spec.basePath).be.a.String();
         }

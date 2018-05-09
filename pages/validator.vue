@@ -79,7 +79,7 @@ export default {
         axios.get( spec.url, {
           dataType: 'json'
         }).then(function (response) {
-            console.log("PUSH")
+            console.log("PUSH", spec.title)
             self.testResults.push( { spec: response.data, results: [], name: spec.title, id: spec.key } )
             resolve();
         }).catch(function (error) {
