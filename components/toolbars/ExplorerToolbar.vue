@@ -95,7 +95,7 @@
   import * as types from '../../store/types'
   import { configuration } from '../../assets/scripts/services/configuration'
 
-  import AuthService from '../../auth0/AuthService'
+  import AuthService from '../auth0/AuthService'
   const auth = new AuthService()
   const { login, logout, authenticated, profile, authNotifier } = auth
 

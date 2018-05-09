@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Auth0Callback from '@/auth0/auth0-callback'
+import Auth0Callback from '@/components/auth0/auth0-callback'
 
 Vue.use(Router)
 
 /* eslint-disable */
 
-import AuthService from './../auth0/AuthService'
+import AuthService from '@/components/auth0/AuthService'
 const auth = new AuthService()
 const { login, logout, authenticated, profile, authNotifier } = auth
 
