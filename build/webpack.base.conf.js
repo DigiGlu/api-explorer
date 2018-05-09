@@ -118,6 +118,7 @@ module.exports = {
         },
         exclude: /node_modules/,
         include: [
+          resolve('auth0'),
           resolve('main'),
           resolve('assets'),
           resolve('components'),

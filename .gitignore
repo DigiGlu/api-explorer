@@ -9,6 +9,8 @@ build/*_backup
 
 debug.log
 
+auth0/auth0-variables.js
+
 .idea
 
 package-lock.json

@@ -1,7 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+import Auth0Callback from '@/auth0/auth0-callback'
+
 Vue.use(Router)
+
+/* eslint-disable */
+
+import AuthService from './../auth0/AuthService'
+const auth = new AuthService()
+const { login, logout, authenticated, profile, authNotifier } = auth
 
 const routes = [
   {
@@ -33,6 +41,12 @@ const routes = [
       panel: () => import('../components/panels/left/ValidatorPanel')
     },
     meta: {name: 'Validator', panel: true, panelWidth: 280}
+  },
+  {
+    path: '/callback',
+    name: 'Callback',
+    component: Auth0Callback,
+    props: {auth: auth}
   }
 ]
 

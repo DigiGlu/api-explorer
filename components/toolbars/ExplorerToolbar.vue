@@ -55,6 +55,11 @@
 
     v-spacer(style="flex: 1 0 auto")
 
+    v-btn(v-if="!authenticated" @click="login") Login
+    label(v-if="authenticated") {{profile["https://experimenz.com/name"]}}
+    img(v-if="authenticated" class="profile-pic" :src="profile['https://experimenz.com/pic']")
+    v-btn(v-if="authenticated" icon @click="logout")
+      v-icon logout
     template(v-if="SPEC")
       v-btn(aria-label="Search" icon @click.native.stop="searchBegin")
         v-icon search
@@ -84,16 +89,31 @@
 </template>
 
 <script>
+/* eslint-disable */
+
   import { mapMutations, mapActions, mapGetters } from 'vuex'
   import * as types from '../../store/types'
   import { configuration } from '../../assets/scripts/services/configuration'
+
+  import AuthService from '../../auth0/AuthService'
+  const auth = new AuthService()
+  const { login, logout, authenticated, profile, authNotifier } = auth
 
   export default {
     components: {
       appToolbarMenu: () => import('./ToolbarMenu')
     },
     data: function () {
+      authNotifier.on('authChange', authState => {
+        this.authenticated = authState.authenticated
+      }),
+      authNotifier.on('profileChange', authProfile => {
+        this.profile = authProfile.profile
+      })
       return {
+        auth,
+        authenticated,
+        profile,
         components: configuration.components,
         searching: false
       }
@@ -159,7 +179,9 @@
         if (this.SETTINGS_SEARCH) {
           this.SPEC_SET_FILTER_RESOURCES(null)
         }
-      }
+      },
+      login,
+      logout
     }
   }
 </script>
@@ -201,4 +223,16 @@
 
   .menu--api >>> .menu__activator .btn__content
     padding 0 2px 0 12px
+
+
+  .profile-pic
+    height 30px
+    width 30px
+    border-radius 15px
+    margin-left 10px
+    margin-top 0px
+
+  .profile-name
+    margin-top 0px
+
 </style>
