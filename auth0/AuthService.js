@@ -23,7 +23,7 @@ export default class AuthService {
     redirectUri: AUTH_CONFIG.callbackUrl,
     //audience: 'https://digiglu.eu.auth0.com/userinfo',
     responseType: 'token id_token',
-    scope: 'openid user_metadata app_metadata'
+    scope: 'openid user_metadata app_metadata read:user_idp_tokens'
   })
 //  AUDIENCE SHOULD BE SPECIFIED (REMOVED FOR SIMPLICITY)
 //  audience: `https://${AUTH_CONFIG.domain}/userinfo`,
