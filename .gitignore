@@ -9,7 +9,7 @@ build/*_backup
 
 debug.log
 
-auth0/auth0-variables.js
+components/auth0/auth0-variables.js
 
 .idea
 
